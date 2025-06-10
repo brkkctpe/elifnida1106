@@ -1054,12 +1054,10 @@ $(document).ready(function()
 	center: 'title',
 	right: 'month,basicWeek,basicDay'
 	},
-	navLinks: true, // can click day/week names to navigate views
-	editable: true,
-        eventLimit: true,
-        defaultDate: '<?=date("Y-m-d")?>',
+        navLinks: true, // can click day/week names to navigate views
         editable: true,
         eventLimit: true,
+        defaultDate: '<?=date("Y-m-d")?>',
         dayClick: function(date) {
             $.get('Ajax/randevuTimes.php', {tarih: date.format('YYYY-MM-DD')}, function(html){
                 $('#randevuModal .modal-body').html(html);
