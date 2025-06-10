@@ -210,11 +210,25 @@
 					}"; 
 				}
 		?>
-		<div class="card card-custom gutter-b">
-			<div class="card-body">
-				<div id='calendar'></div>
-			</div>
-		</div>
+                <div class="card card-custom gutter-b">
+                        <div class="card-body">
+                                <div id='calendar'></div>
+                        </div>
+                </div>
+                <!-- Randevu modal -->
+                <div class="modal fade" id="randevuModal" tabindex="-1" role="dialog" aria-labelledby="randevuModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                                <h5 class="modal-title" id="randevuModalLabel">Saat Seç</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                </button>
+                                        </div>
+                                        <div class="modal-body"></div>
+                                </div>
+                        </div>
+                </div>
 		
 	<!--end::Container-->
 </div>

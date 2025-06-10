@@ -1033,7 +1033,7 @@ $(document).ready(function()
 
   $(document).ready(function() {
 
-    $('#calendar').fullCalendar({       
+    $('#calendar').fullCalendar({
 	monthNames: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
 	monthNamesShort: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
 	dayNames: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
@@ -1056,13 +1056,19 @@ $(document).ready(function()
 	},
 	navLinks: true, // can click day/week names to navigate views
 	editable: true,
-	eventLimit: true, // allow "more" link when too many events
-	defaultDate: '<?=date("Y-m-d")?>',
-	editable: true,
-	eventLimit: true, // allow "more" link when too many events
-	events: [
-		<?=implode(",",$calendar);?>
-	]
+        eventLimit: true,
+        defaultDate: '<?=date("Y-m-d")?>',
+        editable: true,
+        eventLimit: true,
+        dayClick: function(date) {
+            $.get('Ajax/randevuTimes.php', {tarih: date.format('YYYY-MM-DD')}, function(html){
+                $('#randevuModal .modal-body').html(html);
+                $('#randevuModal').modal('show');
+            });
+        },
+        events: [
+                <?=implode(",",$calendar);?>
+        ]
     });
 
   });
