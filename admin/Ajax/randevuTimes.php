@@ -17,7 +17,7 @@ for($i=9*60; $i<17*60; $i+=30){
     $min = $i%60;
     $saat = sprintf('%02d:%02d', $hour, $min);
     $class = in_array($saat, $alinan) ? 'btn-danger disabled' : 'btn-success';
-    $output .= "<a href='index.php?mo=randevuekle&tarih=$tarih&saat=$saat' class='btn $class m-1'>$saat</a>";
+    $output .= "<a href='index.php?mo=randevu&do=randevu_ekle&tarih=$tarih&saat=$saat' class='btn $class m-1'>$saat</a>";
 }
 
 echo $output;
