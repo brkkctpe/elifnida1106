@@ -1054,15 +1054,19 @@ $(document).ready(function()
 	center: 'title',
 	right: 'month,basicWeek,basicDay'
 	},
-	navLinks: true, // can click day/week names to navigate views
-	editable: true,
-	eventLimit: true, // allow "more" link when too many events
-	defaultDate: '<?=date("Y-m-d")?>',
-	editable: true,
-	eventLimit: true, // allow "more" link when too many events
-	events: [
-		<?=implode(",",$calendar);?>
-	]
+   	navLinks: true, // can click day/week names to navigate views
+        editable: true,
+        eventLimit: true,
+        defaultDate: '<?=date("Y-m-d")?>',
+        dayClick: function(date) {
+            $.get('Ajax/randevuTimes.php', {tarih: date.format('YYYY-MM-DD')}, function(html){
+                $('#randevuModal .modal-body').html(html);
+                $('#randevuModal').modal('show');
+            });
+        },
+        events: [
+                <?=implode(",",$calendar);?>
+        ]
     });
 
   });
