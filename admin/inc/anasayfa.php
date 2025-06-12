@@ -210,13 +210,7 @@
 					}"; 
 				}
 		?>
-		<!-- <div class="card card-custom gutter-b">
-			<div class="card-body">
-				<div id='calendar'></div>
-			</div>
-		</div> -->
-		
-		 <div class="card card-custom gutter-b">
+		<div class="card card-custom gutter-b">
                         <div class="card-body">
                                 <div id='calendar'></div>
                         </div>
@@ -235,6 +229,8 @@
                                 </div>
                         </div>
                 </div>
+		
+		 
 		 
 	<!--end::Container-->
 </div>
