@@ -1,7 +1,9 @@
 <?php !defined("ADMIN") ? die("Hacking?") : null; ?>
 
 <?php
-require_once("../../../app/Config/config-db.php");
+// include database config using absolute path so this file works when
+// included from different directories
+require_once(__DIR__ . '/../../../app/Config/config-db.php');
 
 $defTarih = isset($_GET['tarih']) ? $_GET['tarih'] : date('Y-m-d');
 $defSaat  = isset($_GET['saat']) ? $_GET['saat'] : '09:00';
